@@ -19,7 +19,9 @@ public class Server {
             while (true) {
                 //Returns the address of the endpoint this socket is bound to.
                 var socket = server.accept();
-               // TODO var threadWithSocketDirectoryInfo 
+
+                var thread = new ThreadHandler(socket, this.directoryFrom);
+                thread.start();
             }
         } catch (IOException e) {
             e.printStackTrace();
