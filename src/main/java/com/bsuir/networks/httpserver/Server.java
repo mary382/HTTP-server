@@ -28,4 +28,11 @@ public class Server {
         }
     }
 
+    public static void main(String[] args) {
+        //первый аргумент cmd - порт, второй - папка
+        var port = Integer.parseInt(args[0]);
+        var directory = args[1];
+        new Server(port, directory).startServer();
+    }
+
 }
